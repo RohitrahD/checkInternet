@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-check-internet" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>CheckInternet</name>
+    <js-module name="CheckInternet" src="www/CheckInternet.js">
+        <clobbers target="cordova.plugins.CheckInternet" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="CheckInternet">
+                <param name="android-package" value="cordova-plugin-check-internet.CheckInternet" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+			<uses-permission android:name="android.permission.INTERNET" /> 
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		</config-file>
+        <source-file src="src/android/CheckInternet.java" target-dir="src/cordova-plugin-check-internet/CheckInternet" />
+    </platform>
+</plugin>
